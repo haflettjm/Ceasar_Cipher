@@ -8,7 +8,7 @@
 
 # ASCII Table Upper Case 65 - 90
 # ASCII Table Lower Case 97 - 122
-
+# When its over 26
 puts "Please input a message to encode:\n"
 message = gets.chomp
 #using chomp because we want input on the keypress enter
@@ -16,8 +16,13 @@ puts "Please input number cipher to use: \n"
 cipher = gets.chomp.to_i
 
 
-newNumber = cipher + 1
+# check if move is above alphabet testing check statment
+letter = message[0]
+move = cipher + letter.ord
+if move > 122 || move > 90
+  # 26 being the number of letters in the alphabet
+  move = move - 26
+end
+letter = move.chr
 
-puts message
-
-puts newNumber
+puts letter
