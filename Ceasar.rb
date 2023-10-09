@@ -1,11 +1,3 @@
-
-# find the location of the letter in the alphabet
-#
-# Then Check to see if the cipher key and the location is larger then the alphabet
-# if it is then loop over from A starting at 26 plus the key minus the current letters position.
-#
-
-
 # ASCII Table Upper Case 65 - 90
 # ASCII Table Lower Case 97 - 122
 # When its over 26
