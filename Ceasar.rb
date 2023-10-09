@@ -17,12 +17,15 @@ cipher = gets.chomp.to_i
 
 
 # check if move is above alphabet testing check statment
-letter = message[0]
-move = cipher + letter.ord
-if move > 122 || move > 90
-  # 26 being the number of letters in the alphabet
-  move = move - 26
+newMessage = ""
+message.split("").each do |letter|
+  if (letter.ord > 64 && letter.ord < 91) || (letter.ord > 96 && letter.ord < 123)
+    move = cipher + letter.ord
+    if (move > 90 && letter.ord <= 90) || (move > 122 && letter.ord <= 122)
+      move = move - 26
+    end
+    letter = move.chr
+  end
+  newMessage << letter
 end
-letter = move.chr
-
-puts letter
+puts newMessage
